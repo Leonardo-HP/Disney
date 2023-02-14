@@ -11,7 +11,7 @@ import {
 	spring,
 } from 'remotion/.';
 
-export const Animal: React.FC = () => {
+export const Entrada: React.FC = () => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const driver = spring({
@@ -26,9 +26,30 @@ export const Animal: React.FC = () => {
 		},
 	});
 
+	
+	const mirada1 = interpolate(frame, [0,10,20,30],[3,10,-7,3], {extrapolateRight: 'clamp'} )
+
+	const mirada2 = interpolate(frame, [0,10,20,30],[-2,8,-8,-2], {extrapolateRight: 'clamp'} )
+
+	const rotacionOrejaDerecha = interpolate(frame, [0,10,20,30],[0,-10,-10,0], {extrapolateRight: 'clamp'} )
+
+	const rotacionOrejaIzquierda = interpolate(frame, [0,10,20,30],[0,10,10,0], {extrapolateRight: 'clamp'} )
+
+	
+  const inclinacion = interpolate(frame, [0,21,22,25,26,30],[30,0,0,-20,-20,0], {extrapolateRight: 'clamp'} )
+
+  const deslizar = interpolate(frame, [0,21,22,25,26,30],[-950,-100,-100,-30,-30,-100], {extrapolateRight: 'clamp'} )
+
+
 	return (
 		<div className="gato">
-			<AbsoluteFill style={{top: '0px', left:'-100px'}}>
+			<AbsoluteFill style={{
+        top: '0px',
+       left:`${deslizar}px`,
+
+       transform: `skew(${inclinacion}deg)`,
+		
+       }}>
 			<div className="orejas">
 				<div className="orejaIzquierda">
 					<AbsoluteFill
@@ -38,11 +59,11 @@ export const Animal: React.FC = () => {
 							background: '#8b9294',
 							top: '350px',
 							left: '650px',
-
 							borderRadius: '0% 100% 0% 50% ',
-
 							borderLeft: '1px  solid grey ',
 							borderTop: '1px  solid grey',
+							transform: `rotate(${rotacionOrejaIzquierda}deg)`
+
 						}}
 					>
 						<AbsoluteFill
@@ -71,6 +92,7 @@ export const Animal: React.FC = () => {
 
 							borderLeft: '1px  solid grey ',
 							borderTop: '1px  solid grey',
+							transform: `rotate(${rotacionOrejaDerecha}deg)`
 						}}
 					>
 						<AbsoluteFill
@@ -90,36 +112,40 @@ export const Animal: React.FC = () => {
 			<div className="cara">
 				<AbsoluteFill
 					style={{
-						height: '200px',
+						height: '210px',
 						width: '200px',
 						background: '#8b9294',
 						top: '50%',
 						left: '50%',
-						borderRadius: '90px 90px 100px 100px',
+						borderRadius: '100px 100px 90px 90px',
 					}}
 				>
 					<div className="ojos">
+	
 						<AbsoluteFill style={{left: '10px'}}>
 							<div className="ojoDerecho">
+
+
 								<AbsoluteFill
 									style={{
-										height: '40px',
+										height: `40px`,
 										width: '50px',
 										background: 'black',
-										top: '60px',
+										top: `60px`,
 										left: '30px',
 										border: 'solid grey 1px',
 										borderRadius: '0 60% ',
 										overflow: 'hidden',
 									}}
 								>
+
 									<AbsoluteFill
 										style={{
 											height: '50px',
 											width: '50px',
 											background: 'white',
 											top: '-5px',
-											left: '0px',
+											left: `${mirada1}px`,
 											borderRadius: '100px 100px 100px 100px',
 										}}
 									>
@@ -129,7 +155,7 @@ export const Animal: React.FC = () => {
 												width: '45px',
 												background: 'black',
 												top: '2px',
-												left: '3px',
+												left: `3px`,
 												borderRadius: '100px 100px 100px 100px',
 											}}
 										>
@@ -149,7 +175,7 @@ export const Animal: React.FC = () => {
 														width: '15px',
 														background: 'black',
 														top: '5px',
-														left: '15px',
+														left: '12px',
 														borderRadius: '50%',
 													}}
 												/>
@@ -162,10 +188,10 @@ export const Animal: React.FC = () => {
 							<div className="ojoIzquierdo">
 								<AbsoluteFill
 									style={{
-										height: '40px',
+										height: `40px`,
 										width: '50px',
 										background: 'black',
-										top: '60px',
+										top: `60px`,
 										left: '105px',
 										border: 'solid grey 1px',
 										borderRadius: '60% 0',
@@ -178,7 +204,7 @@ export const Animal: React.FC = () => {
 											width: '50px',
 											background: 'white',
 											top: '-5px',
-											left: '-2px',
+											left: `${mirada2}px`,
 											borderRadius: '100px 100px 100px 100px',
 										}}
 									>
@@ -188,7 +214,7 @@ export const Animal: React.FC = () => {
 												width: '45px',
 												background: 'black',
 												top: '2px',
-												left: '3px',
+												left: `2px`,
 												borderRadius: '100px 100px 100px 100px',
 											}}
 										>
@@ -208,7 +234,7 @@ export const Animal: React.FC = () => {
 														width: '15px',
 														background: 'black',
 														top: '5px',
-														left: '10px',
+														left: `12px`,
 														borderRadius: '50%',
 													}}
 												/>
@@ -221,6 +247,7 @@ export const Animal: React.FC = () => {
 					</div>
 
 					<div className="hocico">
+
 						<div className="boca">
 							<AbsoluteFill
 								style={{

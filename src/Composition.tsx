@@ -25,10 +25,13 @@ export const MyComposition = () => {
 	return(
 <div>
 <Fondo/>
-<Sequence durationInFrames={100}>
+<Sequence durationInFrames={200}>
 <Intro/>
 </Sequence>
-<Sequence from={100} durationInFrames={200}>
+<Sequence from={200} durationInFrames={100}>
+<PrimerPrincipio/>
+</Sequence>
+<Sequence from={300} durationInFrames={100}>
 <PrimerPrincipio/>
 </Sequence>
 

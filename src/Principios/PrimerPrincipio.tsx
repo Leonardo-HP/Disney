@@ -38,11 +38,11 @@ export const PrimerPrincipio: React.FC = () => {
 		extrapolateRight: 'clamp',
 	});
 
-	const rotacionOrejaDerecha = interpolate(frame, [0, 30], [0, 20], {
+	const rotacionOrejaDerecha = interpolate(frame, [0, 30,70,80,85,90,91,100], [0, 20,20,0,0,20,20,0], {
 		extrapolateRight: 'clamp',
 	});
 
-	const rotacionOrejaIzquierda = interpolate(frame, [0, 30], [0, -20], {
+	const rotacionOrejaIzquierda = interpolate(frame, [0, 30,70,80,85,90,91,100], [0, -20,-20,0,0,-20,-20,0], {
 		extrapolateRight: 'clamp',
 	});
 
@@ -54,7 +54,7 @@ export const PrimerPrincipio: React.FC = () => {
 		extrapolateRight: 'clamp',
 	});
 
-	const wiggleWidht = interpolate(frame, [0, 30,   35,45,   61,70,  76,84,   85,90, 91, 95], [200, 220,    220,200,   200,220,   220,200,   200,230 , 230,200], {
+	const wiggleWidht = interpolate(frame, [0, 30,   35,45,   61,70,  76,84,   87,90, 91, 95], [200, 220,    220,180,   180,220,   220,180,   180,220 , 220,200], {
 		extrapolateRight: 'clamp',
 	});
 
@@ -66,21 +66,30 @@ export const PrimerPrincipio: React.FC = () => {
 		extrapolateRight: 'clamp',
 	});
 
-	const wiggleLeft = interpolate(frame, [0, 30,  31,45,  60,75,  85,90,91,95], [0, -5,   -5,0,   0,-5,    -5,-10,-10,0 ], {
+	const wiggleLeft = interpolate(frame, [0, 30,  31,45,  60,75,  76,84,      85,90,     91,95], [0, -5,   -5,10,   10,-5,    -5,10,    10,-5,    -5,0 ], {
 		extrapolateRight: 'clamp',
 	});
 
-	const wiggleEyesLeft = interpolate(frame, [0,30,31,45,60,75,76,80,81,90,91,95], [10,20,  20,10,  10,20,  20,10,10,20,20,10], {
+	const wiggleEyesLeft = interpolate(frame, [0,30,   31,45,  60,75    ,76,80, 81,90,  91,95], [10,20,  20,0,  0,10,  10,0,  0,10,   10,10], {
 		extrapolateRight: 'clamp',
 	});
 
-	const wiggleNoseLeft = interpolate(frame,   [0,30,31,45,60,75,76,80,81,90,91,95], [0, 10,10,0,0,10,10,0,0,15,15,0], {
+	const wiggleNoseLeft = interpolate(frame,   [0,30,31,45,60,75,76,80,81,90,91,95], [10,20,  20,0,  0,10,  10,0,  0,10,   10,10], {
 		extrapolateRight: 'clamp',
 	});
 
-	const wiggleOrejasLeft = interpolate(frame, [0,30,31,45,60,75,76,80,81,90,91,95], [0, 10,10,0,0,10,10,0,0,15,15,0], {
+	const wiggleOrejasLeft = interpolate(frame, [0,30,31,45,60,75, 76,80,  81,90,  91,95], [0,10,10,0,0,10,10,0  ,0,5,  5,0], {
 		extrapolateRight: 'clamp',
 	});
+	const wiggleEyesTop = interpolate(frame, [0,30,31,45,60  ,65,76,80,81,   90,   91,95], [0,20,  20,0,  0,-10,  -10,30,30,20,20,0], {
+		extrapolateRight: 'clamp',
+	});
+
+	const wiggleNoseTop = interpolate(frame, [0,30,31,45,60,65,76,80,81,90,91,95], [0,20,  20,0,  0,-10,  -10,30,30,20,20,0], {
+		extrapolateRight: 'clamp',
+	});
+
+
 
 	const wiggle = interpolate(frame, [0,5,10,15,20,30],[0,-2,2,-2,2,0], {extrapolateRight: 'clamp'} )
 
@@ -97,6 +106,7 @@ export const PrimerPrincipio: React.FC = () => {
 				<AbsoluteFill
 					style={{
 						left: `${wiggleOrejasLeft}px`,
+
 					}}
 				>
 					<div className="orejaIzquierda">
@@ -172,6 +182,7 @@ export const PrimerPrincipio: React.FC = () => {
 						<AbsoluteFill
 							style={{
 								left: `${wiggleEyesLeft}px`,
+								top: `${wiggleEyesTop}px`
 							}}
 						>
 							<div className="ojoDerecho">
@@ -298,6 +309,7 @@ export const PrimerPrincipio: React.FC = () => {
 						<AbsoluteFill
 							style={{
 								left: `${wiggleNoseLeft}px`,
+								top: `${wiggleNoseTop}px`,
 							}}
 						>
 							<div className="boca">

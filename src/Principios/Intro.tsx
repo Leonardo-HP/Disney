@@ -11,6 +11,7 @@ import {
 	spring,
 	
 } from 'remotion/.';
+import { Baile } from '../Movimientos/Baile';
 import { Entrada } from '../Movimientos/Entrada';
 import {  Mirada1 } from '../Movimientos/Mirada1';
 import { Parpadeo } from '../Movimientos/Parpadeo';
@@ -41,12 +42,18 @@ export const Intro: React.FC = () => {
 <Mirada1/>
 </Sequence>
 
-<Sequence from={60} durationInFrames={10}>
+<Sequence from={60} durationInFrames={20}>
 <Parpadeo/>
 </Sequence>
 
-<Sequence from={70} durationInFrames={50}>
+<Sequence from={80} durationInFrames={20}>
 <Parpadeo/>
+</Sequence>
+
+
+
+<Sequence from={100} durationInFrames={100}>
+<Baile/>
 </Sequence>
 </div>
 	);

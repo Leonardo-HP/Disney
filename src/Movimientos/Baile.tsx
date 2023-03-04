@@ -41,13 +41,13 @@ export const Baile: React.FC = () => {
 
 
 
-  const danceLeft = interpolate(frame, [0,10,20,50,60,70],[0,50,50,-50,-50,0], {extrapolateRight: 'clamp'} )
+  const danceLeft = interpolate(frame, [0,10,20,40,50,60],[-90,-40,-40,-140,-140,-90], {extrapolateRight: 'clamp'} )
 
-	const danceTop = interpolate(frame, [0,5,10,15,20,25,30,35],[210,180,210,180,210,210,210,210], {extrapolateRight: 'clamp'} )
+	const danceTop = interpolate(frame, [0,5, 10,19,   20,25,   35,40    ,41,50,   55,60 ],[0,30,0,0,0,30,30,0,0,0,30,0], {extrapolateRight: 'clamp'} )
 
-  const danceHeight = interpolate(frame, [0,5,10,20  ,21,30,   31,60,   65,70      ],[210,180,  210,210,  210,180,  180,210,  180,210      ], {extrapolateRight: 'clamp'} )
+  const danceHeight = interpolate(frame, [0,5, 10,19,   20,25,   35,40    ,41,50,   55,60],[210,180,   210,210,   210,180     ,180,210,     210,210,180,210   ], {extrapolateRight: 'clamp'} )
 
-  const dance = interpolate(frame, [0,10,20,50,60,70],[0,-15,-15,15,15,0], {extrapolateRight: 'clamp'} )
+  const dance = interpolate(frame, [0,10,   20,40   ,50,60],[0,-15,-15,15,15,0], {extrapolateRight: 'clamp'} )
 
 
 
@@ -59,6 +59,7 @@ export const Baile: React.FC = () => {
 			style={{
 				left: `${danceLeft}px`,
 				transform: `skew(${dance}deg)`,
+				top: `${danceTop}px`,
 			}}>
 
 

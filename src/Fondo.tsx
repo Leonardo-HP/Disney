@@ -26,9 +26,7 @@ export const Fondo: React.FC = () => {
 		},
 	});
 
-	const parpadear = interpolate(frame, [0, 15, 16, 30], [40, 0, 0, 40], {
-		extrapolateRight: 'clamp',
-	});
+
 
 	return (
 		<div>

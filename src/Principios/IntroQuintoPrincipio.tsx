@@ -52,7 +52,7 @@ export const Intro: React.FC = () => {
 
 
 
-<Sequence from={100} durationInFrames={100}>
+<Sequence from={100} durationInFrames={70}>
 <Baile/>
 </Sequence>
 </div>

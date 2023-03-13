@@ -25,10 +25,10 @@ export const MirandoCoche: React.FC = () => {
 			damping: 100,
 		},
 	});
-	const mirada1 = interpolate(frame,[0, 10, 50, 60, 180, 200],[3, 3, 3, 10, 10, 3],{extrapolateRight: 'clamp'}
+	const mirada1 = interpolate(frame,[0, 10,       50, 60,  115,130,     180, 200],[3, 3,        3, 10,  10,-13,    -13, 3],{extrapolateRight: 'clamp'}
 	);
 
-	const mirada2 = interpolate(frame,[0, 10, 50, 60, 180, 200],[-2, -2, -2, 8, 8, -2],{extrapolateRight: 'clamp'}
+	const mirada2 = interpolate(frame,[0, 10,         50, 60,  115,130,      180, 200],[-2, -2,      -2, 8,  8,-15       ,-15, -2],{extrapolateRight: 'clamp'}
 	);
 
 	const parpadear = interpolate(frame,[0, 5, 6, 10, 70, 80, 180, 200],[40, 0, 0, 40, 40, 20, 20, 40],{extrapolateRight: 'clamp'}

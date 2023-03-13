@@ -7,18 +7,24 @@ import {
 
 } from "remotion";
  
-export const MoveCarrito: React.FC<{
+export const MoveCola: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
 
   const frame = useCurrentFrame();
  
-  const y = interpolate(frame, [0,20,35,36,60,80,90,100, 200], [1250,1000,1000,800,700,600,500,400, 0]);
+
+ 
+  const r = interpolate(frame, [0, 100,200,300,400], [0,20,-20,20,0]);
  
   return (
     <AbsoluteFill
       style={{
-        translate: ` ${y}px 530px`,
+
+
+transform:`skew(${r}deg)`,
+translate:'50px'
+
       }}
     >
       {children}

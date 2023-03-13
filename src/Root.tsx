@@ -1,6 +1,7 @@
 import {Composition} from 'remotion';
 import {MyComposition} from './Composition';
-import { MyComposition2 } from './Composition2';
+import { Prueba } from './Prueba';
+
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -14,9 +15,9 @@ export const RemotionRoot: React.FC = () => {
 				height={720}
 			/>
 						<Composition
-				id="MyComp2"
-				component={MyComposition2}
-				durationInFrames={300}
+				id="Prueba"
+				component={Prueba}
+				durationInFrames={2000}
 				fps={30}
 				width={1280}
 				height={720}

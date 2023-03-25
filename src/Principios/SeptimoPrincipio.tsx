@@ -36,7 +36,7 @@ export const SeptimoPrincipio: React.FC = () => {
 	
 	return (
 		<div className="gato">
-			<Sequence  durationInFrames={200}>
+			<Sequence  durationInFrames={500}>
 				<AbsoluteFill>
 <CompCola/>
 				</AbsoluteFill>

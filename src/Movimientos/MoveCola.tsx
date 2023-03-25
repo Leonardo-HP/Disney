@@ -15,7 +15,7 @@ export const MoveCola: React.FC<{
  
 
  
-  const r = interpolate(frame, [0, 100,200,300,400], [0,20,-20,20,0]);
+  const r = interpolate(frame, [0, 50,100,150,200,250,300], [0,20,-20,20,-20,0,0]);
  
   return (
     <AbsoluteFill

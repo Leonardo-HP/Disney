@@ -14,46 +14,46 @@ import {
 export const Cola: React.FC = () => {
 	const frame = useCurrentFrame();
 
-	const height1 = interpolate(frame, [1, 100], [300, 0], {
+	const height1 = interpolate(frame, [1, 50], [300, 0], {
 		extrapolateRight: 'clamp',
 	});
 
-	const width1 = interpolate(frame, [1, 100], [200, 0], {
-		extrapolateRight: 'clamp',
-	});
-
-
-	const translate1 = interpolate(frame, [1, 100], [0, 200], {
-		extrapolateRight: 'clamp',
-	});
-
-	const scale1 = interpolate(frame, [0,92, 100], [1,1,0], {
-		extrapolateRight: 'clamp',
-	});
-  const opacity1 = interpolate(frame, [0, 92, 100], [1, 1, 0], {
+	const width1 = interpolate(frame, [1, 50], [200, 0], {
 		extrapolateRight: 'clamp',
 	});
 
 
-	const height2 = interpolate(frame, [1, 100], [0, 300], {
+	const translate1 = interpolate(frame, [1, 50], [0, 200], {
 		extrapolateRight: 'clamp',
 	});
 
-	const width2 = interpolate(frame, [1, 100], [0, 200], {
+	const scale1 = interpolate(frame, [0,41, 50], [1,1,0], {
+		extrapolateRight: 'clamp',
+	});
+  const opacity1 = interpolate(frame, [0, 41, 50], [1, 1, 0], {
 		extrapolateRight: 'clamp',
 	});
 
-	const translatey = interpolate(frame, [1, 100], [285, -10], {
-		extrapolateRight: 'clamp',
-	});
-	const translatex = interpolate(frame, [1, 100], [200, 200], {
-		extrapolateRight: 'clamp',
-	});
-  const scale2 = interpolate(frame, [0,9, 100], [0,1,1], {
+
+	const height2 = interpolate(frame, [1, 50], [0, 300], {
 		extrapolateRight: 'clamp',
 	});
 
-	const opacity2 = interpolate(frame, [0, 9, 100], [0, 1, 1], {
+	const width2 = interpolate(frame, [1, 50], [0, 200], {
+		extrapolateRight: 'clamp',
+	});
+
+	const translatey = interpolate(frame, [1, 50], [285, -10], {
+		extrapolateRight: 'clamp',
+	});
+	const translatex = interpolate(frame, [1, 50], [200, 200], {
+		extrapolateRight: 'clamp',
+	});
+  const scale2 = interpolate(frame, [0,9, 50], [0,1,1], {
+		extrapolateRight: 'clamp',
+	});
+
+	const opacity2 = interpolate(frame, [0, 9, 50], [0, 1, 1], {
 		extrapolateRight: 'clamp',
 	});
 

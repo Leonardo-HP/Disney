@@ -53,13 +53,12 @@ export const CompCola: React.FC = () => {
         </AbsoluteFill>
 			</Sequence>
 
-      <Sequence from={400} durationInFrames={100}>
+      <Sequence from={400} durationInFrames={150}>
 				<AbsoluteFill
 					style={{
 						transform: `scaleX(-1)`,
 						translate: `-880px -35px `,
-					}}
-				>
+					}}>
 					<Cola/>
 				</AbsoluteFill>
 			</Sequence>
